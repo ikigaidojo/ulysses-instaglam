@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   
-  belongs_to :member
+  belongs_to :member, optional: true
   
   validates :caption, :presence => true
 

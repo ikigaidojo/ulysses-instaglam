@@ -796,3 +796,44 @@ Unpermitted parameter: :posted_image
 Completed 200 OK in 216ms (Views: 131.5ms | ActiveRecord: 0.9ms)
 
 
+Started POST "/posts" for 127.0.0.1 at 2018-03-23 16:50:46 +0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y2pqIDoxC3ydoaKVUyzjgPjJLQRaezoLnV9vn0/dDTxItoqdJG2yLwV8jY6+pjGCjXMRSCKwMx6WdWtMdKFHbg==", "post"=>{"posted_image"=>#<ActionDispatch::Http::UploadedFile:0x007fbcfef6f848 @tempfile=#<Tempfile:/var/folders/mc/h2g46dvs2v54c0jl1dd7x9700000gn/T/RackMultipart20180323-19856-1rt7q78.png>, @original_filename="Screen Shot 2018-03-23 at 12.48.38 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[posted_image]\"; filename=\"Screen Shot 2018-03-23 at 12.48.38 PM.png\"\r\nContent-Type: image/png\r\n">, "caption"=>"Aaa"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 6ms
+
+
+  
+SyntaxError (/Users/ulysses/workshop/workbench/projects/clientdev/IkigaiDojo/dojo/Term One/week 3/ulysses-instaglam/app/models/post.rb:3: syntax error, unexpected keyword_true, expecting keyword_end
+ngs_to :member, :optional true
+                              ^):
+  
+app/models/post.rb:3: syntax error, unexpected keyword_true, expecting keyword_end
+app/controllers/posts_controller.rb:28:in `create'
+Started POST "/posts" for 127.0.0.1 at 2018-03-23 16:51:23 +0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y2pqIDoxC3ydoaKVUyzjgPjJLQRaezoLnV9vn0/dDTxItoqdJG2yLwV8jY6+pjGCjXMRSCKwMx6WdWtMdKFHbg==", "post"=>{"posted_image"=>#<ActionDispatch::Http::UploadedFile:0x007fbd00b84948 @tempfile=#<Tempfile:/var/folders/mc/h2g46dvs2v54c0jl1dd7x9700000gn/T/RackMultipart20180323-19856-1pb54g4.png>, @original_filename="Screen Shot 2018-03-23 at 12.48.38 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[posted_image]\"; filename=\"Screen Shot 2018-03-23 at 12.48.38 PM.png\"\r\nContent-Type: image/png\r\n">, "caption"=>"Aaa"}, "commit"=>"Create Post"}
+Unpermitted parameter: :posted_image
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["caption", "Aaa"], ["created_at", "2018-03-23 08:51:24.152010"], ["updated_at", "2018-03-23 08:51:24.152010"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 79ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2018-03-23 16:51:25 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 149ms (Views: 138.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-23 16:52:16 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 119ms (Views: 99.1ms | ActiveRecord: 0.4ms)
+
+
