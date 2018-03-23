@@ -837,3 +837,147 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 119ms (Views: 99.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/posts/new" for 127.0.0.1 at 2018-03-23 16:55:07 +0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (85.3ms)
+  Rendered posts/new.html.erb within layouts/application (109.3ms)
+Completed 200 OK in 702ms (Views: 630.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-23 16:55:20 +0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gX0IWtTsDqUWQX8lNUROAkgs/FhFJR/nB31pLXURTduqoejnyrC39o6cUD7YzpwAPZbAFD3uFvIMV23+Tm0HiQ==", "post"=>{"posted_image"=>#<ActionDispatch::Http::UploadedFile:0x007fc17a16a9e8 @tempfile=#<Tempfile:/var/folders/mc/h2g46dvs2v54c0jl1dd7x9700000gn/T/RackMultipart20180323-20084-120nmj0.png>, @original_filename="Screen Shot 2018-03-23 at 12.48.38 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[posted_image]\"; filename=\"Screen Shot 2018-03-23 at 12.48.38 PM.png\"\r\nContent-Type: image/png\r\n">, "caption"=>"Bbb"}, "commit"=>"Create Post"}
+Unpermitted parameter: :posted_image
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (9.6ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["caption", "Bbb"], ["created_at", "2018-03-23 08:55:20.800098"], ["updated_at", "2018-03-23 08:55:20.800098"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 20ms (ActiveRecord: 13.2ms)
+
+
+Started GET "/posts/6" for 127.0.0.1 at 2018-03-23 16:55:20 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 154ms (Views: 93.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-03-23 16:57:52 +0800
+Started GET "/posts/new" for 127.0.0.1 at 2018-03-23 16:57:52 +0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (83.4ms)
+  Rendered posts/_form.html.erb (81.9ms)
+  Rendered posts/new.html.erb within layouts/application (101.5ms)
+  Rendered posts/new.html.erb within layouts/application (100.6ms)
+Completed 200 OK in 919ms (Views: 870.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 937ms (Views: 874.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-23 16:58:04 +0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ky6tvGYWequgtpHy1BUQgdMAqNfeI615PhKIf5esShEA8k0BeErD+Dhrvuk5n8KDprqUm6bopGw1OIysrNAAQw==", "post"=>{"posted_image"=>#<ActionDispatch::Http::UploadedFile:0x007fe8db65add0 @tempfile=#<Tempfile:/var/folders/mc/h2g46dvs2v54c0jl1dd7x9700000gn/T/RackMultipart20180323-20139-p29413.png>, @original_filename="Screen Shot 2018-03-23 at 12.48.38 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[posted_image]\"; filename=\"Screen Shot 2018-03-23 at 12.48.38 PM.png\"\r\nContent-Type: image/png\r\n">, "caption"=>"Ccc"}, "commit"=>"Create Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("caption", "created_at", "updated_at", "posted_image_id") VALUES (?, ?, ?, ?)[0m  [["caption", "Ccc"], ["created_at", "2018-03-23 08:58:04.962337"], ["updated_at", "2018-03-23 08:58:04.962337"], ["posted_image_id", "b465a4fe8d42c1704eb5b089ee708c2f521c6d9d09a96f8aaee8a5fa4fde"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 23ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/posts/7" for 127.0.0.1 at 2018-03-23 16:58:04 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 129ms (Views: 69.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-23 17:00:45 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (91.3ms)
+Completed 500 Internal Server Error in 146ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `profile_image' for #<Post:0x007fe8db7044e8>):
+    14: 	  <tbody>
+    15: 	      <% @posts.each do |post| %>
+    16: 				<tr>
+    17: 					<td><%= image_tag attachment_url(post, :profile_image, :fill, 300, 300) %></td>
+    18: 				</tr>	
+    19: 		    <tr>
+    20: 		      <td><%= post.caption %></td>
+  
+app/views/posts/index.html.erb:17:in `block in _app_views_posts_index_html_erb__3159076981705005649_70319051994140'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__3159076981705005649_70319051994140'
+Started GET "/posts" for 127.0.0.1 at 2018-03-23 17:01:08 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    14: 	  <tbody>
+    15: 	      <% @posts.each do |post| %>
+    16: 				<tr>
+    17: 					<td><%= image_tag attachment_url(post, :posted_image, :fill, 300, 300) %></td>
+    18: 				</tr>	
+    19: 		    <tr>
+    20: 		      <td><%= post.caption %></td>
+  
+app/views/posts/index.html.erb:17:in `block in _app_views_posts_index_html_erb__3159076981705005649_70319028346400'
+app/views/posts/index.html.erb:15:in `_app_views_posts_index_html_erb__3159076981705005649_70319028346400'
+Started GET "/posts" for 127.0.0.1 at 2018-03-23 17:02:42 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 164ms (Views: 158.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/attachments/ff591314a15bdd01c10e74a885130d8fb4a9985f/store/fill/300/300/b465a4fe8d42c1704eb5b089ee708c2f521c6d9d09a96f8aaee8a5fa4fde/posted_image" for 127.0.0.1 at 2018-03-23 17:02:43 +0800
+Refile::App: [2018-03-23 17:02:44 +0800] GET "/ff591314a15bdd01c10e74a885130d8fb4a9985f/store/fill/300/300/b465a4fe8d42c1704eb5b089ee708c2f521c6d9d09a96f8aaee8a5fa4fde/posted_image" 200 879.8ms
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-23 17:03:27 +0800
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 98ms (Views: 89.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/attachments/dd2983fbac65240feeb7050e6bd46ab1cf4ef1ae/store/fill/150/150/b465a4fe8d42c1704eb5b089ee708c2f521c6d9d09a96f8aaee8a5fa4fde/posted_image" for 127.0.0.1 at 2018-03-23 17:03:27 +0800
+Refile::App: [2018-03-23 17:03:27 +0800] GET "/dd2983fbac65240feeb7050e6bd46ab1cf4ef1ae/store/fill/150/150/b465a4fe8d42c1704eb5b089ee708c2f521c6d9d09a96f8aaee8a5fa4fde/posted_image" 200 356.3ms
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-03-23 17:03:46 +0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (12.2ms)
+  Rendered posts/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 162ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2018-03-23 17:03:47 +0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.1ms)
+  Rendered posts/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 72ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
